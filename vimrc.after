@@ -1,3 +1,0 @@
-color desert
-nnoremap <CR> :noh<CR>
-set hidden
