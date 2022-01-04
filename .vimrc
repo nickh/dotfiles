@@ -1,5 +1,5 @@
 " setup Plug
-call plug#begin('~/.config/nvim/bundle')
+call plug#begin('~/.vim/plugged')
 
 Plug 'gmarik/vundle'
 Plug 'vim-ruby/vim-ruby'
