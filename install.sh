@@ -23,16 +23,22 @@ sudo modprobe fuse
 sudo groupadd fuse
 sudo usermod -a -G fuse "$(whoami)"
 # wget https://github.com/neovim/neovim/releases/download/v0.5.1/nvim.appimage
-wget https://github.com/github/copilot.vim/releases/download/neovim-nightlies/appimage.zip
+wget --no-verbose https://github.com/github/copilot.vim/releases/download/neovim-nightlies/appimage.zip
 unzip appimage.zip
 sudo chmod u+x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
 nvim +'PlugInstall --sync' +qa
 
+mkdir -p $HOME/.config
+rm -f $HOME/.config/nvim
+ln -s "$(pwd)/config/nvim" "$HOME/.config/nvim"
+ln -s $(pwd)/vim $HOME/.vim
+
 # VIM/plugin setup
 cp .vimrc ~/
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+# git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# vim +PluginInstall +qall
+vim -Es -u $HOME/.vimrc -c "PlugInstall | qa"
 
 cat >> ~/.bashrc <<EOF
 
