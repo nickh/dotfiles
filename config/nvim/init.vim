@@ -84,5 +84,6 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'janko/vim-test'
 Plug 'benmills/vimux'
 Plug 'tpope/vim-endwise'
+Plug 'github/copilot.vim'
 
 call plug#end()
