@@ -27,12 +27,13 @@ wget --no-verbose https://github.com/github/copilot.vim/releases/download/neovim
 unzip appimage.zip
 sudo chmod u+x nvim.appimage
 sudo mv nvim.appimage /usr/local/bin/nvim
-nvim +'PlugInstall --sync' +qa
 
 mkdir -p $HOME/.config
 rm -f $HOME/.config/nvim
 ln -s "$(pwd)/config/nvim" "$HOME/.config/nvim"
 ln -s $(pwd)/vim $HOME/.vim
+
+nvim +'PlugInstall --sync' +qa
 
 # VIM/plugin setup
 cp .vimrc ~/
