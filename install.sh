@@ -31,10 +31,13 @@ sudo mv nvim.appimage /usr/local/bin/nvim
 mkdir -p $HOME/.config
 rm -f $HOME/.config/nvim
 ln -s "$(pwd)/config/nvim" "$HOME/.config/nvim"
-ln -s "${pwd}/config/github-copilot" "$HOME/.config/github-copilot"
 ln -s $(pwd)/vim $HOME/.vim
 
 nvim +'PlugInstall --sync' +qa
+
+# Copilot
+mkdir -p $HOME/.config/github-copilot
+cp config/github-copilot/terms.json $HOME/.config/github-copilot/
 
 # tmux setup
 cp .tmux.conf ~/
