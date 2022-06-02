@@ -52,3 +52,9 @@ cat >> ~/.bashrc <<EOF
 
 export EDITOR=vim
 EOF
+
+cat >> ~/.bash_profile <<EOF
+
+source ~/.bashrc
+EOF
+
