@@ -44,7 +44,7 @@ let g:VimuxHeight = "25"
 let g:VimuxOrientation = "h"
 let test#strategy = "vimux"
 
-set wildignore+=*.json,*.yml
+set wildignore+=package*.json,package.yml
 
 " setup Plug
 call plug#begin('~/.config/nvim/bundle')
