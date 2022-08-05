@@ -4,6 +4,8 @@ exec > >(tee -i $HOME/dotfiles_install.log)
 exec 2>&1
 set -x
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 mkdir -p $HOME/.config
 rm -f $HOME/.config/nvim
 ln -s "$(pwd)/config/nvim" "$HOME/.config/nvim"
