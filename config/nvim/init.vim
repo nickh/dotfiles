@@ -87,5 +87,35 @@ Plug 'janko/vim-test'
 Plug 'benmills/vimux'
 Plug 'tpope/vim-endwise'
 Plug 'github/copilot.vim'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
+
+function! s:fzf_statusline()
+  highlight fzf1 ctermfg=7 ctermbg=2
+  highlight fzf2 ctermfg=7 ctermbg=2
+  highlight fzf3 ctermfg=7 ctermbg=2
+  setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+endfunction
+
+autocmd! User FzfStatusLine call <SID>fzf_statusline()
+
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+command! -bang -nargs=* Rg call fzf#vim#grep(
+      \ "rg --hidden --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>),
+      \ 1,
+      \ {'options': '--delimiter : --nth 2.. --with-nth 1,4 --preview="bat {1} -H {2}" --preview-window +{2}-/2'},
+      \ <bang>0
+      \)
