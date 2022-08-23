@@ -38,3 +38,7 @@ cat >> ~/.bash_profile <<EOF
 source ~/.bashrc
 EOF
 
+cat >> ~/.bash_history <<EOF
+tmux
+tmux attach
+EOF
