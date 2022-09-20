@@ -38,6 +38,7 @@ highlight Normal ctermbg=None
 nnoremap <CR> :noh<CR>
 map <Leader>l :TestNearest<CR>
 map <Leader>f :TestFile<CR>
+map <Leader>g :GFiles<CR>
 set hidden
 
 let g:VimuxHeight = "25"
