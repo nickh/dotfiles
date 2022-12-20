@@ -31,6 +31,11 @@ vim -Es -u $HOME/.vimrc -c "PlugInstall | qa"
 cat >> ~/.bashrc <<EOF
 
 export EDITOR=vim
+
+# Copilot needs a more recent node than the one in Codespace's /usr/bin
+if [ -d "$GITHUB_PATH/vendor/node" ] ; then
+  export PATH=$GITHUB_PATH/vendor/node:$PATH
+fi
 EOF
 
 cat >> ~/.bash_profile <<EOF
