@@ -41,6 +41,12 @@ EOF
 cat >> ~/.bash_profile <<EOF
 
 source ~/.bashrc
+
+if ! tmux ls ; then
+  tmux
+else
+  tmux attach
+fi
 EOF
 
 cat >> ~/.bash_history <<EOF
