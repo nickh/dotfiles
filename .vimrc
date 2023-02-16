@@ -4,7 +4,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'gmarik/vundle'
 Plug 'vim-ruby/vim-ruby'
 Plug 'ervandew/supertab'
-Plug 'bronson/vim-trailing-whitespace'
+Plug 'npeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript'
 Plug 'kchmck/vim-coffee-script'
 " Plug 'ctrlp.vim'
