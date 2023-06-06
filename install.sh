@@ -13,7 +13,7 @@ rm -f $HOME/.config/nvim
 ln -s "$(pwd)/config/nvim" "$HOME/.config/nvim"
 ln -s $(pwd)/vim $HOME/.vim
 
-nvim +'PlugInstall --sync' +qa
+nvim --headless +PlugInstall +qall
 
 # Copilot
 mkdir -p $HOME/.config/github-copilot
