@@ -42,6 +42,8 @@ cat >> ~/.bash_profile <<EOF
 
 source ~/.bashrc
 
+alias emut='TEST_WITH_ALL_EMUS=1 bin/rails test '
+
 if ! tmux ls ; then
   tmux
 else
