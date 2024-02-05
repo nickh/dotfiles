@@ -56,6 +56,7 @@ EOF
 cat >> ~/.bash_history <<EOF
 tmux
 tmux attach
+git diff origin/master...HEAD
 git push origin HEAD
 git checkout master && git fetch origin master && git rebase origin/master && brt packages/users/test/models/user/languages_dependency_test.rb
 EOF
