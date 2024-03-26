@@ -15,6 +15,9 @@ ln -s $(pwd)/vim $HOME/.vim
 
 nvim --headless +PlugInstall +qall
 
+# Git
+git config --global codespaces-theme.hide-status 0
+
 # Copilot
 mkdir -p $HOME/.config/github-copilot
 cp config/github-copilot/terms.json $HOME/.config/github-copilot/
