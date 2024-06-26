@@ -13,7 +13,6 @@ set shiftwidth=2
 set showtabline=2
 set number
 set wrap
-set backspace=0
 set t_Co=256
 set colorcolumn=120 " red line and over is error
 set textwidth=0
