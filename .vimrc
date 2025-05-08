@@ -83,6 +83,7 @@ map <Leader>l :TestNearest<CR>
 map <Leader>f :TestFile<CR>
 set hidden
 
+let g:go_version_warning = 0
 let g:VimuxHeight = "25"
 let g:VimuxOrientation = "h"
 let test#strategy = "vimux"
