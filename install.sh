@@ -23,6 +23,10 @@ mkdir -p $HOME/.config/github-copilot
 cp config/github-copilot/terms.json $HOME/.config/github-copilot/
 
 # tmux setup
+if ! which tmux ; then
+  echo Installing tmux...
+  sudo apt-get install -y tmux
+fi
 cp .tmux.conf ~/
 
 # VIM/plugin setup
